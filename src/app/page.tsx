@@ -1,4 +1,4 @@
-import { getHomeContent } from "@/lib/content";
+import { getHomeContent, getSiteConfig } from "@/lib/content";
 import Header from "@/components/Header";
 import BannerCarousel from "@/components/BannerCarousel";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
@@ -8,7 +8,10 @@ import Image from "next/image";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default async function HomePage() {
-  const content = await getHomeContent();
+  const [content, siteConfig] = await Promise.all([getHomeContent(), getSiteConfig()]);
+  const whatsappUrl = siteConfig.whatsappUrl || "https://wa.me/5493413356168";
+  const instagramUrl =
+    siteConfig.instagramUrl || "https://www.instagram.com/almendra.estudiodigital/";
 
   return (
     <main className="flex min-h-screen flex-col bg-white">
@@ -264,7 +267,7 @@ export default async function HomePage() {
                 <span className="h-px flex-1 bg-[#E6D6CF]" />
                 <div className="flex items-center gap-3">
                   <a
-                    href="https://wa.me/5493413356168"
+                    href={whatsappUrl}
                     aria-label="WhatsApp"
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EADBD2] text-[#6F553C]"
                     target="_blank"
@@ -273,7 +276,7 @@ export default async function HomePage() {
                     <FaWhatsapp className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://www.instagram.com/almendra.estudiodigital/"
+                    href={instagramUrl}
                     aria-label="Instagram"
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EADBD2] text-[#6F553C]"
                     target="_blank"
@@ -318,7 +321,7 @@ export default async function HomePage() {
                 <span className="h-px flex-1 bg-[#E6D6CF]" />
                 <div className="flex items-center gap-3">
                   <a
-                    href="https://wa.me/5493413356168"
+                    href={whatsappUrl}
                     aria-label="WhatsApp"
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EADBD2] text-[#6F553C]"
                     target="_blank"
@@ -327,7 +330,7 @@ export default async function HomePage() {
                     <FaWhatsapp className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://www.instagram.com/almendra.estudiodigital/"
+                    href={instagramUrl}
                     aria-label="Instagram"
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EADBD2] text-[#6F553C]"
                     target="_blank"
@@ -345,6 +348,16 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <a
+        href={whatsappUrl}
+        aria-label="Abrir chat de WhatsApp"
+        className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F553C] focus-visible:ring-offset-2 md:bottom-6 md:right-6 md:h-14 md:w-14"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        <FaWhatsapp className="h-6 w-6 md:h-7 md:w-7" />
+      </a>
 
       <footer className="bg-[#E2D3CC] text-[#6F553C]">
         <div className="mx-auto w-full max-w-6xl px-8 pt-8 pb-6">
@@ -395,7 +408,7 @@ export default async function HomePage() {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://wa.me/5493413356168"
+                href={whatsappUrl}
                 aria-label="WhatsApp"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EADBD2] text-[#6F553C] md:h-20 md:w-20"
                 target="_blank"
@@ -404,7 +417,7 @@ export default async function HomePage() {
                 <FaWhatsapp className="h-5 w-5 md:h-8 md:w-8" />
               </a>
               <a
-                href="https://www.instagram.com/almendra.estudiodigital/"
+                href={instagramUrl}
                 aria-label="Instagram"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EADBD2] text-[#6F553C] md:h-20 md:w-20"
                 target="_blank"
