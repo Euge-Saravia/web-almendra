@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Almendra | Agencia de Marketing",
   description: "Landing page de Almendra, agencia de marketing y comunicación.",
   icons: {
-    icon: "/images/PERFIL.jpg"
+    icon: "/images/logo-redondo.png"
   }
 };
 
