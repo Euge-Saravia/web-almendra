@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BlissProExtraBold";
+  src: url("/fonts/BlissPro-ExtraBold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BlissProLight";
+  src: url("/fonts/BlissPro-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Branch";
+  src: url("/fonts/Branch.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-white text-almond-800 font-sans;
+}
+
+.section-title {
+  font-family: "BlissProExtraBold", var(--font-serif), serif;
+  line-height: 1.1;
+  @apply text-almond-700 tracking-wide;
+}
+
+.services-item {
+  font-family: "Branch", var(--font-serif), serif;
+  font-weight: 400;
+}
+
+.portfolio-label {
+  font-family: "Branch", var(--font-serif), serif;
+  font-weight: 400;
+}
+
+.clients-title {
+  font-family: "Branch", var(--font-serif), serif;
+  font-weight: 400;
+}
+
+.contact-title {
+  font-family: "Branch", var(--font-serif), serif;
+  font-weight: 400;
+}
+
+.footer-title {
+  font-family: "Branch", var(--font-serif), serif;
+  font-weight: 400;
+}
+
+.body-copy {
+  font-family: "BlissProLight", var(--font-sans), sans-serif;
+  font-weight: 300;
+}
+
+.section-divider {
+  height: 2.5px;
+  background-color: #6f553c;
+  @apply w-full;
+}
