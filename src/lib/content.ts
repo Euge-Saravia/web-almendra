@@ -15,7 +15,19 @@ export type HomeContent = {
   socialBodyHtml: string;
 };
 
+export type SiteConfig = {
+  whatsappNumber: string;
+  whatsappUrl: string;
+  instagramUrl: string;
+};
+
 const contentPath = path.join(process.cwd(), "content", "home.md");
+const siteConfigPath = path.join(process.cwd(), "content", "site.md");
+
+const buildWhatsAppUrl = (number: string) => {
+  const digits = number.replace(/\D/g, "");
+  return digits ? `https://wa.me/${digits}` : "";
+};
 
 export async function getHomeContent(): Promise<HomeContent> {
   const file = fs.readFileSync(contentPath, "utf8");
@@ -36,6 +48,19 @@ export async function getHomeContent(): Promise<HomeContent> {
       ? data.services.map((item) => String(item))
       : [],
     socialTitle: String(data.socialTitle || ""),
-    socialBodyHtml
+    socialBodyHtml,
+  };
+}
+
+export async function getSiteConfig(): Promise<SiteConfig> {
+  const file = fs.readFileSync(siteConfigPath, "utf8");
+  const { data } = matter(file);
+  const whatsappNumber = String(data.whatsappNumber || "");
+  const instagramUrl = String(data.instagramUrl || "");
+
+  return {
+    whatsappNumber,
+    whatsappUrl: buildWhatsAppUrl(whatsappNumber),
+    instagramUrl,
   };
 }
