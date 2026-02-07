@@ -18,44 +18,42 @@ export default async function HomePage() {
       <Header />
       <BannerCarousel />
 
-      <section id="servicios" className="px-8 pb-16 pt-0 md:px-0 md:pb-16 md:pt-0">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 md:max-w-none md:flex-row md:items-stretch md:gap-16 md:pl-12">
-          <div className="flex-1 text-center md:flex md:flex-col md:pb-10 md:pt-24 md:text-left">
-            <div className="mb-12 flex items-center justify-center gap-6 md:justify-start">
-              <h2 className="section-title text-[2rem] md:text-[3rem]">
-                {content.servicesTitle}
-              </h2>
-              <Image
-                src="/images/paleta-de-colores.png"
-                alt="Paleta de colores"
-                width={180}
-                height={24}
-                className="h-5 w-auto md:h-7"
-              />
-            </div>
-            <div className="mx-auto flex w-full flex-col gap-10 text-center text-almond-700 md:mx-0 md:flex-1 md:justify-between md:text-center">
-              {content.services.map((service, index) => (
-                <div key={service} className="flex flex-col items-center gap-4">
-                  <p className="services-item text-2xl md:text-[2rem]">{service}</p>
-                  <span
-                    className={`hidden h-[2.5px] w-full bg-[#6f553c] md:block md:max-w-[480px] ${
-                      index % 2 === 0 ? "md:self-end" : "md:self-start"
-                    }`}
-                  />
-                  <div className="section-divider mx-auto w-[70%] max-w-[260px] md:hidden" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="hidden w-full flex-1 md:block">
+      <section id="servicios" className="pb-16 pt-0">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-8 md:px-12">
+          <div className="flex items-center justify-center gap-6 md:justify-start">
+            <h2 className="section-title text-[2rem] md:text-[3rem]">
+              {content.servicesTitle}
+            </h2>
             <Image
-              src="/images/servicios-img-desktop.png"
-              alt="Servicios"
-              width={900}
-              height={900}
-              className="h-full w-full object-cover"
+              src="/images/paleta-de-colores.png"
+              alt="Paleta de colores"
+              width={180}
+              height={24}
+              className="h-5 w-auto md:h-7"
             />
           </div>
+        </div>
+
+        <div className="mt-8 flex w-full flex-col">
+          {content.services.map((service, index) => {
+            const bandColor = index % 2 === 0 ? "#B0B1AB" : "#C3C3BA";
+            const isColoredBand = index % 2 === 0;
+
+            return (
+              <div
+                key={service}
+                className="flex items-center justify-center px-6 py-4 text-center"
+                style={{ backgroundColor: isColoredBand ? bandColor : "#FFFFFF" }}
+              >
+                <p
+                  className="services-item text-2xl md:text-[2rem]"
+                  style={{ color: isColoredBand ? "#FFFFFF" : bandColor }}
+                >
+                  {service}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
