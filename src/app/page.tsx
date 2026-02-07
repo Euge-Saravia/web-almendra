@@ -84,7 +84,7 @@ export default async function HomePage() {
               className="absolute -right-10 top-20 hidden md:block"
             />
           </div>
-          <div className="w-full px-8 text-center md:w-1/2 md:px-0 md:text-left">
+          <div className="w-full px-6 pb-16 text-center md:w-1/2 md:px-0 md:text-left">
             <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
               <h2 className="section-title text-[2rem] md:text-[3rem]">
                 {content.aboutTitle}
@@ -116,9 +116,9 @@ export default async function HomePage() {
 
       <section
         id="redes-sociales"
-        className="px-8 pb-20 pt-12 md:pl-12 md:pr-0 md:pt-0"
+        className="px-6 pb-16 pt-12 md:pl-12 md:pr-0 md:pt-0"
       >
-        <div className="flex w-full flex-col gap-10 text-center md:flex-row md:items-center md:gap-16">
+        <div className="flex w-full flex-col gap-12 text-center md:flex-row md:items-center md:gap-16">
           <div className="md:w-1/2 md:text-left">
             <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
               <h2 className="section-title text-[2rem] md:text-[3rem]">
@@ -133,7 +133,7 @@ export default async function HomePage() {
               />
             </div>
             <div
-              className="body-copy space-y-6 text-sm leading-relaxed text-almond-700"
+              className="body-copy space-y-6 text-base leading-relaxed text-almond-700"
               dangerouslySetInnerHTML={{ __html: content.socialBodyHtml }}
             />
           </div>
@@ -386,7 +386,7 @@ export default async function HomePage() {
                 alt="Almendra"
                 width={192}
                 height={40}
-                className="mb-4 h-auto w-auto md:h-10 md:w-48"
+                className="mb-4 h-auto w-auto max-w-[70%] md:h-10 md:w-48"
               />
               <p className="footer-title text-[1.2rem] leading-tight md:text-[1.5rem]">
                 Llevamos tu marca

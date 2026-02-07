@@ -14,6 +14,10 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const menuAriaProps = {
+    "aria-expanded": isOpen ? "true" : "false",
+    "aria-controls": "mobile-menu"
+  } as const;
 
   useEffect(() => {
     function handleOutsideClick(event: MouseEvent | TouchEvent) {
@@ -33,7 +37,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="relative flex items-center justify-between px-6 py-5">
+    <header className="sticky top-0 z-30 flex items-center justify-between px-6 py-5">
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/banner-background-nav.png"
@@ -63,7 +67,7 @@ export default function Header() {
       </nav>
       <button
         aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-        aria-expanded={isOpen}
+        {...menuAriaProps}
         onClick={() => setIsOpen((prev) => !prev)}
         ref={buttonRef}
         className="z-10 flex h-10 w-10 items-center justify-center md:hidden"
@@ -76,6 +80,7 @@ export default function Header() {
       </button>
 
       <nav
+        id="mobile-menu"
         ref={menuRef}
         className={`absolute right-6 top-[72px] z-20 w-56 rounded-2xl border border-almond-700/10 bg-white/95 p-4 text-almond-700 shadow-lg backdrop-blur transition-all duration-300 ease-out md:hidden ${
           isOpen
