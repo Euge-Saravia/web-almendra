@@ -5,12 +5,14 @@ import { useState } from "react";
 
 const slides = [
   {
-    src: "/images/comentarios-yaniIsola.png",
+    mobileSrc: "/images/comentarios-yaniIsola-mobile.png",
+    desktopSrc: "/images/comentarios-yaniIsola-desktop.png",
     alt: "Comentario de Yani Isola"
   },
   {
-    src: "/images/comentarios-yaniIsola.png",
-    alt: "Comentario de Yani Isola"
+    mobileSrc: "/images/comentarios-agus-mobile.png",
+    desktopSrc: "/images/comentarios-agus-desktop.png",
+    alt: "Comentario de Agus"
   }
 ];
 
@@ -48,13 +50,21 @@ export default function ClientsCarousel() {
         </svg>
       </button>
 
-      <div className="relative w-full max-w-[420px] md:w-3/4 md:max-w-none">
+      <div className="relative w-full max-w-[420px] md:w-[65%] md:max-w-none">
         <Image
-          src={slides[activeIndex].src}
+          src={slides[activeIndex].mobileSrc}
           alt={slides[activeIndex].alt}
           width={760}
           height={440}
-          className="h-auto w-full rounded-2xl shadow-[0_8px_20px_rgba(17,24,39,0.15)]"
+          className="h-auto w-full rounded-2xl shadow-[0_8px_20px_rgba(17,24,39,0.15)] md:hidden"
+          priority={activeIndex === 0}
+        />
+        <Image
+          src={slides[activeIndex].desktopSrc}
+          alt={slides[activeIndex].alt}
+          width={900}
+          height={520}
+          className="hidden h-auto w-full rounded-2xl shadow-[0_8px_20px_rgba(17,24,39,0.15)] md:block"
           priority={activeIndex === 0}
         />
       </div>
