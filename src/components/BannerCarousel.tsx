@@ -31,7 +31,7 @@ export default function BannerCarousel() {
 
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="relative h-[240px] w-full md:h-[460px]">
+      <div className="relative h-[240px] w-full md:h-[800px]">
         {slides.map((slide, index) => {
           const isActive = index === activeIndex;
           const sharedClassName = `transition-opacity duration-700 ${
