@@ -18,50 +18,33 @@ export default async function HomePage() {
       <Header />
       <BannerCarousel />
 
-      <section id="servicios" className="px-8 pb-16 pt-0 md:px-0 md:pb-16 md:pt-0">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 md:max-w-none md:flex-row md:items-stretch md:gap-16 md:pl-12">
-          <div className="flex-1 text-center md:flex md:flex-col md:pb-10 md:pt-24 md:text-left">
-            <div className="mb-12 flex items-center justify-center gap-6 md:justify-start">
-              <h2 className="section-title text-[2rem] md:text-[3rem]">
-                {content.servicesTitle}
-              </h2>
-              <Image
-                src="/images/paleta-de-colores.png"
-                alt="Paleta de colores"
-                width={180}
-                height={24}
-                className="h-5 w-auto md:h-7"
-              />
-            </div>
-            <div className="mx-auto flex w-full flex-col gap-10 text-center text-almond-700 md:mx-0 md:flex-1 md:justify-between md:text-center">
-              {content.services.map((service, index) => (
-                <div key={service} className="flex flex-col items-center gap-4">
-                  <p className="services-item text-2xl md:text-[2rem]">{service}</p>
-                  <span
-                    className={`hidden h-[2.5px] w-full bg-[#6f553c] md:block md:max-w-[480px] ${
-                      index % 2 === 0 ? "md:self-end" : "md:self-start"
-                    }`}
-                  />
-                  <div className="section-divider mx-auto w-[70%] max-w-[260px] md:hidden" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="hidden w-full flex-1 md:block">
-            <Image
-              src="/images/servicios-img-desktop.png"
-              alt="Servicios"
-              width={900}
-              height={900}
-              className="h-full w-full object-cover"
-            />
-          </div>
+      <section id="servicios" className="pb-6 pt-0 md:pb-16">
+        <div className="mt-8 flex w-full flex-col">
+          {content.services.map((service, index) => {
+            const bandColor = "#A8ADA7";
+            const isColoredBand = index % 2 === 0;
+
+            return (
+              <div
+                key={service}
+                className="flex items-center justify-center px-6 py-4 text-center"
+                style={{ backgroundColor: isColoredBand ? bandColor : "#FFFFFF" }}
+              >
+                <p
+                  className="services-item text-2xl md:text-[2rem]"
+                  style={{ color: isColoredBand ? "#FFFFFF" : bandColor }}
+                >
+                  {service}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
       <section id="nosotras" className="pt-0 pb-0 md:px-0 md:pt-0 md:pb-0">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 md:max-w-none md:flex-row md:items-center md:gap-16 md:pr-12">
-          <div className="relative w-full md:-mt-8 md:w-1/2">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-0 md:max-w-none md:flex-row md:items-stretch md:gap-0">
+          <div className="relative w-full md:w-1/2">
             <Image
               src="/images/banner-nosotras-mobile.jpeg"
               alt="Nosotras"
@@ -72,8 +55,8 @@ export default async function HomePage() {
             <Image
               src="/images/banner-nosotras-desktop.jpeg"
               alt="Nosotras"
-              width={900}
-              height={1100}
+              width={746}
+              height={1080}
               className="hidden w-full object-cover md:block"
             />
             <Image
@@ -84,23 +67,43 @@ export default async function HomePage() {
               className="absolute -right-10 top-20 hidden md:block"
             />
           </div>
-          <div className="w-full px-8 text-center md:w-1/2 md:px-0 md:text-left">
-            <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
-              <h2 className="section-title text-[2rem] md:text-[3rem]">
-                {content.aboutTitle}
-              </h2>
-              <Image
-                src="/images/paleta-de-colores.png"
-                alt="Paleta de colores"
-                width={180}
-                height={24}
-                className="h-5 w-auto md:h-7"
+          <div className="w-full bg-[#A8ADA7] px-6 pb-16 pt-12 text-center text-white md:flex md:w-1/2 md:flex-col md:justify-start md:px-0 md:pt-80 md:text-left">
+            <div className="mx-auto w-full px-[1.7rem] md:px-36">
+              <div className="mb-6 flex flex-col items-center justify-center gap-3 md:hidden">
+                <Image
+                  src="/images/paleta-de-colores.png"
+                  alt="Paleta de colores"
+                  width={180}
+                  height={24}
+                  className="h-5 w-auto"
+                />
+                <h2
+                  className="section-title text-[2rem]"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  {content.aboutTitle}
+                </h2>
+              </div>
+              <div className="mb-6 hidden items-center justify-center gap-3 md:flex md:justify-start md:mb-14">
+                <h2
+                  className="section-title text-[2rem] md:text-[3rem]"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  {content.aboutTitle}
+                </h2>
+                <Image
+                  src="/images/paleta-de-colores.png"
+                  alt="Paleta de colores"
+                  width={180}
+                  height={24}
+                  className="h-5 w-auto md:h-7"
+                />
+              </div>
+              <div
+                className="body-copy space-y-6 text-base leading-relaxed text-white md:text-base"
+                dangerouslySetInnerHTML={{ __html: content.aboutBodyHtml }}
               />
             </div>
-            <div
-              className="body-copy space-y-6 text-base leading-relaxed text-almond-700 md:text-base"
-              dangerouslySetInnerHTML={{ __html: content.aboutBodyHtml }}
-            />
           </div>
         </div>
       </section>
@@ -116,11 +119,23 @@ export default async function HomePage() {
 
       <section
         id="redes-sociales"
-        className="px-8 pb-20 pt-12 md:pl-12 md:pr-0 md:pt-0"
+        className="px-6 pb-16 pt-12 md:pl-12 md:pr-0 md:pt-0"
       >
-        <div className="flex w-full flex-col gap-10 text-center md:flex-row md:items-center md:gap-16">
-          <div className="md:w-1/2 md:text-left">
-            <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
+        <div className="flex w-full flex-col gap-12 text-center md:flex-row md:items-center md:gap-16">
+          <div className="md:w-1/2 md:text-left md:px-28">
+            <div className="mb-6 flex flex-col items-center justify-center gap-3 md:hidden">
+              <Image
+                src="/images/paleta-de-colores.png"
+                alt="Paleta de colores"
+                width={180}
+                height={24}
+                className="h-5 w-auto"
+              />
+              <h2 className="section-title text-[2rem]">
+                {content.socialTitle}
+              </h2>
+            </div>
+            <div className="mb-6 hidden items-center justify-center gap-3 md:flex md:justify-start">
               <h2 className="section-title text-[2rem] md:text-[3rem]">
                 {content.socialTitle}
               </h2>
@@ -133,7 +148,7 @@ export default async function HomePage() {
               />
             </div>
             <div
-              className="body-copy space-y-6 text-sm leading-relaxed text-almond-700"
+              className="body-copy space-y-6 text-base leading-relaxed text-almond-700"
               dangerouslySetInnerHTML={{ __html: content.socialBodyHtml }}
             />
           </div>
@@ -157,7 +172,19 @@ export default async function HomePage() {
       </section>
 
       <section id="portfolio" className="px-8 pb-2 pt-0 md:pl-12 md:pr-0">
-        <div className="flex w-full items-center justify-center gap-3 text-center md:justify-start md:text-left">
+        <div className="flex w-full items-center justify-center text-center md:hidden">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <Image
+              src="/images/paleta-de-colores.png"
+              alt="Paleta de colores"
+              width={180}
+              height={24}
+              className="h-5 w-auto"
+            />
+            <h2 className="section-title text-[2rem]">Portfolio</h2>
+          </div>
+        </div>
+        <div className="hidden w-full items-center justify-center gap-3 text-center md:flex md:justify-start md:text-left">
           <h2 className="section-title text-[2rem] md:text-[3rem]">Portfolio</h2>
           <Image
             src="/images/paleta-de-colores.png"
@@ -234,7 +261,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="pb-16 pt-12">
+      <section className="pb-8 pt-12 md:pb-16">
         <h2 className="clients-title text-center text-[2rem] text-[#6F553C] md:text-[3rem]">
           Nuestros Clientes Dicen...
         </h2>
@@ -301,14 +328,16 @@ export default async function HomePage() {
           <div className="md:hidden">
             <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
               <div className="mb-6 flex items-center justify-center gap-3">
-                <h2 className="section-title text-[2rem]">Contacto</h2>
-                <Image
-                  src="/images/paleta-de-colores.png"
-                  alt="Paleta de colores"
-                  width={180}
-                  height={24}
-                  className="h-5 w-auto"
-                />
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <Image
+                    src="/images/paleta-de-colores.png"
+                    alt="Paleta de colores"
+                    width={180}
+                    height={24}
+                    className="h-5 w-auto"
+                  />
+                  <h2 className="section-title text-[2rem]">Contacto</h2>
+                </div>
               </div>
               <h3 className="contact-title mb-4 text-[1.5rem] text-[#6F553C]">
                 Hablemos de tu proyecto
@@ -352,11 +381,17 @@ export default async function HomePage() {
       <a
         href={whatsappUrl}
         aria-label="Abrir chat de WhatsApp"
-        className="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F553C] focus-visible:ring-offset-2 md:bottom-6 md:right-6 md:h-14 md:w-14"
+        className="fixed bottom-5 right-5 z-50 flex h-[3.5rem] w-[3.5rem] items-center justify-center rounded-full bg-white text-white shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F553C] focus-visible:ring-offset-2 md:bottom-6 md:right-6"
         target="_blank"
         rel="noreferrer noopener"
       >
-        <FaWhatsapp className="h-6 w-6 md:h-7 md:w-7" />
+        <Image
+          src="/images/logo-whatsapp.png"
+          alt="Logo de WhatsApp"
+          width={32}
+          height={32}
+          className="h-[2.5rem] w-[2.5rem] md:h-[2.75rem] md:w-[2.75rem]"
+        />
       </a>
 
       <footer className="bg-[#E2D3CC] text-[#6F553C]">
@@ -380,7 +415,7 @@ export default async function HomePage() {
                 alt="Almendra"
                 width={192}
                 height={40}
-                className="mb-4 h-auto w-auto md:h-10 md:w-48"
+                className="mb-4 h-auto w-auto max-w-[70%] md:h-10 md:w-[17rem]"
               />
               <p className="footer-title text-[1.2rem] leading-tight md:text-[1.5rem]">
                 Llevamos tu marca
