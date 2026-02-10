@@ -20,7 +20,7 @@ const slides = [
     label: "Re Branding"
   },
   {
-    src: "/images/portfolio-tiendaNube-Mobile.png",
+    src: "/images/portfolio-tiendaNube-mobile.png",
     alt: "Portfolio tienda nube",
     label: "Tienda Nube"
   }
