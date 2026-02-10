@@ -18,25 +18,10 @@ export default async function HomePage() {
       <Header />
       <BannerCarousel />
 
-      <section id="servicios" className="pb-16 pt-0">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-8 md:px-12">
-          <div className="flex items-center justify-center gap-6 md:justify-start">
-            <h2 className="section-title text-[2rem] md:text-[3rem]">
-              {content.servicesTitle}
-            </h2>
-            <Image
-              src="/images/paleta-de-colores.png"
-              alt="Paleta de colores"
-              width={180}
-              height={24}
-              className="h-5 w-auto md:h-7"
-            />
-          </div>
-        </div>
-
+      <section id="servicios" className="pb-6 pt-0 md:pb-16">
         <div className="mt-8 flex w-full flex-col">
           {content.services.map((service, index) => {
-            const bandColor = index % 2 === 0 ? "#B0B1AB" : "#C3C3BA";
+            const bandColor = "#A8ADA7";
             const isColoredBand = index % 2 === 0;
 
             return (
@@ -58,8 +43,8 @@ export default async function HomePage() {
       </section>
 
       <section id="nosotras" className="pt-0 pb-0 md:px-0 md:pt-0 md:pb-0">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 md:max-w-none md:flex-row md:items-center md:gap-16 md:pr-12">
-          <div className="relative w-full md:-mt-8 md:w-1/2">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-0 md:max-w-none md:flex-row md:items-stretch md:gap-0">
+          <div className="relative w-full md:w-1/2">
             <Image
               src="/images/banner-nosotras-mobile.jpeg"
               alt="Nosotras"
@@ -70,8 +55,8 @@ export default async function HomePage() {
             <Image
               src="/images/banner-nosotras-desktop.jpeg"
               alt="Nosotras"
-              width={900}
-              height={1100}
+              width={746}
+              height={1080}
               className="hidden w-full object-cover md:block"
             />
             <Image
@@ -82,23 +67,43 @@ export default async function HomePage() {
               className="absolute -right-10 top-20 hidden md:block"
             />
           </div>
-          <div className="w-full px-6 pb-16 text-center md:w-1/2 md:px-0 md:text-left">
-            <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
-              <h2 className="section-title text-[2rem] md:text-[3rem]">
-                {content.aboutTitle}
-              </h2>
-              <Image
-                src="/images/paleta-de-colores.png"
-                alt="Paleta de colores"
-                width={180}
-                height={24}
-                className="h-5 w-auto md:h-7"
+          <div className="w-full bg-[#A8ADA7] px-6 pb-16 pt-12 text-center text-white md:flex md:w-1/2 md:flex-col md:justify-start md:px-0 md:pt-80 md:text-left">
+            <div className="mx-auto w-full px-6 md:px-36">
+              <div className="mb-6 flex flex-col items-center justify-center gap-3 md:hidden">
+                <Image
+                  src="/images/paleta-de-colores.png"
+                  alt="Paleta de colores"
+                  width={180}
+                  height={24}
+                  className="h-5 w-auto"
+                />
+                <h2
+                  className="section-title text-[2rem]"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  {content.aboutTitle}
+                </h2>
+              </div>
+              <div className="mb-6 hidden items-center justify-center gap-3 md:flex md:justify-start md:mb-14">
+                <h2
+                  className="section-title text-[2rem] md:text-[3rem]"
+                  style={{ color: "#FFFFFF" }}
+                >
+                  {content.aboutTitle}
+                </h2>
+                <Image
+                  src="/images/paleta-de-colores.png"
+                  alt="Paleta de colores"
+                  width={180}
+                  height={24}
+                  className="h-5 w-auto md:h-7"
+                />
+              </div>
+              <div
+                className="body-copy space-y-6 text-base leading-relaxed text-white md:text-base"
+                dangerouslySetInnerHTML={{ __html: content.aboutBodyHtml }}
               />
             </div>
-            <div
-              className="body-copy space-y-6 text-base leading-relaxed text-almond-700 md:text-base"
-              dangerouslySetInnerHTML={{ __html: content.aboutBodyHtml }}
-            />
           </div>
         </div>
       </section>
@@ -117,8 +122,20 @@ export default async function HomePage() {
         className="px-6 pb-16 pt-12 md:pl-12 md:pr-0 md:pt-0"
       >
         <div className="flex w-full flex-col gap-12 text-center md:flex-row md:items-center md:gap-16">
-          <div className="md:w-1/2 md:text-left">
-            <div className="mb-6 flex items-center justify-center gap-3 md:justify-start">
+          <div className="md:w-1/2 md:text-left md:px-28">
+            <div className="mb-6 flex flex-col items-center justify-center gap-3 md:hidden">
+              <Image
+                src="/images/paleta-de-colores.png"
+                alt="Paleta de colores"
+                width={180}
+                height={24}
+                className="h-5 w-auto"
+              />
+              <h2 className="section-title text-[2rem]">
+                {content.socialTitle}
+              </h2>
+            </div>
+            <div className="mb-6 hidden items-center justify-center gap-3 md:flex md:justify-start">
               <h2 className="section-title text-[2rem] md:text-[3rem]">
                 {content.socialTitle}
               </h2>
@@ -155,7 +172,19 @@ export default async function HomePage() {
       </section>
 
       <section id="portfolio" className="px-8 pb-2 pt-0 md:pl-12 md:pr-0">
-        <div className="flex w-full items-center justify-center gap-3 text-center md:justify-start md:text-left">
+        <div className="flex w-full items-center justify-center text-center md:hidden">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <Image
+              src="/images/paleta-de-colores.png"
+              alt="Paleta de colores"
+              width={180}
+              height={24}
+              className="h-5 w-auto"
+            />
+            <h2 className="section-title text-[2rem]">Portfolio</h2>
+          </div>
+        </div>
+        <div className="hidden w-full items-center justify-center gap-3 text-center md:flex md:justify-start md:text-left">
           <h2 className="section-title text-[2rem] md:text-[3rem]">Portfolio</h2>
           <Image
             src="/images/paleta-de-colores.png"
@@ -232,7 +261,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="pb-16 pt-12">
+      <section className="pb-8 pt-12 md:pb-16">
         <h2 className="clients-title text-center text-[2rem] text-[#6F553C] md:text-[3rem]">
           Nuestros Clientes Dicen...
         </h2>
@@ -299,14 +328,16 @@ export default async function HomePage() {
           <div className="md:hidden">
             <div className="mx-auto flex w-full max-w-6xl flex-col items-center text-center">
               <div className="mb-6 flex items-center justify-center gap-3">
-                <h2 className="section-title text-[2rem]">Contacto</h2>
-                <Image
-                  src="/images/paleta-de-colores.png"
-                  alt="Paleta de colores"
-                  width={180}
-                  height={24}
-                  className="h-5 w-auto"
-                />
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <Image
+                    src="/images/paleta-de-colores.png"
+                    alt="Paleta de colores"
+                    width={180}
+                    height={24}
+                    className="h-5 w-auto"
+                  />
+                  <h2 className="section-title text-[2rem]">Contacto</h2>
+                </div>
               </div>
               <h3 className="contact-title mb-4 text-[1.5rem] text-[#6F553C]">
                 Hablemos de tu proyecto
@@ -384,7 +415,7 @@ export default async function HomePage() {
                 alt="Almendra"
                 width={192}
                 height={40}
-                className="mb-4 h-auto w-auto max-w-[70%] md:h-10 md:w-48"
+                className="mb-4 h-auto w-auto max-w-[70%] md:h-10 md:w-[17rem]"
               />
               <p className="footer-title text-[1.2rem] leading-tight md:text-[1.5rem]">
                 Llevamos tu marca
