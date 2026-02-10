@@ -85,7 +85,7 @@ export default function ContactForm({
             name="nombre"
             placeholder={showLabels ? undefined : "Nombre"}
             required
-            className="w-full rounded-lg border border-[#BF8271] bg-white/80 px-4 py-3 text-sm text-almond-700 placeholder:text-[#B89283] focus:outline-none focus:ring-1 focus:ring-[#BF8271]"
+            className="w-full rounded-lg border border-[#BF8271] bg-white/80 px-4 py-3 text-base text-almond-700 placeholder:text-[#B89283] focus:outline-none focus:ring-1 focus:ring-[#BF8271]"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -100,7 +100,7 @@ export default function ContactForm({
             name="email"
             placeholder={showLabels ? undefined : "Email"}
             required
-            className="w-full rounded-lg border border-[#BF8271] bg-white/80 px-4 py-3 text-sm text-almond-700 placeholder:text-[#B89283] focus:outline-none focus:ring-1 focus:ring-[#BF8271]"
+            className="w-full rounded-lg border border-[#BF8271] bg-white/80 px-4 py-3 text-base text-almond-700 placeholder:text-[#B89283] focus:outline-none focus:ring-1 focus:ring-[#BF8271]"
           />
         </div>
         <div className="flex flex-col gap-1">
@@ -115,13 +115,13 @@ export default function ContactForm({
             placeholder={showLabels ? undefined : "Mensaje / Consulta"}
             rows={4}
             required
-            className="w-full resize-none rounded-lg border border-[#BF8271] bg-white/80 px-4 py-3 text-sm text-almond-700 placeholder:text-[#B89283] focus:outline-none focus:ring-1 focus:ring-[#BF8271]"
+            className="w-full resize-none rounded-lg border border-[#BF8271] bg-white/80 px-4 py-3 text-base text-almond-700 placeholder:text-[#B89283] focus:outline-none focus:ring-1 focus:ring-[#BF8271]"
           />
         </div>
         <button
           type="submit"
           disabled={status === "sending"}
-          className="mt-2 w-full rounded-lg bg-[#BF8271] px-4 py-3 text-sm text-white disabled:opacity-70"
+          className="mt-2 w-full rounded-lg bg-[#BF8271] px-4 py-3 text-base text-white disabled:opacity-70"
         >
           {status === "sending" ? "Enviando..." : "Enviar consulta"}
         </button>
