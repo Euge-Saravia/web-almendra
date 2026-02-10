@@ -68,7 +68,7 @@ export default async function HomePage() {
             />
           </div>
           <div className="w-full bg-[#A8ADA7] px-6 pb-16 pt-12 text-center text-white md:flex md:w-1/2 md:flex-col md:justify-start md:px-0 md:pt-80 md:text-left">
-            <div className="mx-auto w-full px-6 md:px-36">
+            <div className="mx-auto w-full px-[1.7rem] md:px-36">
               <div className="mb-6 flex flex-col items-center justify-center gap-3 md:hidden">
                 <Image
                   src="/images/paleta-de-colores.png"
