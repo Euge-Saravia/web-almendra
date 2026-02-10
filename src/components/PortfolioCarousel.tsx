@@ -10,7 +10,17 @@ const slides = [
     label: "Redes Sociales"
   },
   {
-    src: "/images/portfolio-tiendaNube-Mobile.png",
+    src: "/images/portfolio-identidadVisual-mobile.png",
+    alt: "Portfolio identidad visual",
+    label: "Identidad Visual"
+  },
+  {
+    src: "/images/portfolio-reBranding-mobile.png",
+    alt: "Portfolio re branding",
+    label: "Re Branding"
+  },
+  {
+    src: "/images/portfolio-tiendaNube-mobile.png",
     alt: "Portfolio tienda nube",
     label: "Tienda Nube"
   }
@@ -49,7 +59,7 @@ export default function PortfolioCarousel() {
                 priority={index === 0}
               />
               <div
-                className={`absolute inset-0 bg-[#D0B4B7] opacity-70 ${sharedClassName} z-10`}
+                className={`absolute inset-0 bg-[#D0B4B7] opacity-35 ${sharedClassName} z-10`}
               />
               <div
                 className={`absolute inset-0 flex items-center justify-center px-6 ${sharedClassName} z-20`}
