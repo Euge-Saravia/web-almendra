@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import Script from "next/script";
 import { Playfair_Display, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const serif = Playfair_Display({
@@ -15,11 +15,6 @@ const sans = Inter({
   variable: "--font-sans",
   weight: ["300", "400", "500", "600"]
 });
-
-const Analytics = dynamic(
-  () => import("@vercel/analytics/react").then((mod) => mod.Analytics),
-  { ssr: false }
-);
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
