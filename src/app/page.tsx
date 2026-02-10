@@ -352,7 +352,7 @@ export default async function HomePage() {
       <a
         href={whatsappUrl}
         aria-label="Abrir chat de WhatsApp"
-        className="fixed bottom-5 right-5 z-50 flex h-[3.5rem] w-[3.5rem] items-center justify-center rounded-full bg-white text-white shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F553C] focus-visible:ring-offset-2 md:bottom-6 md:right-6 md:h-[4.5rem] md:w-[4.5rem]"
+        className="fixed bottom-5 right-5 z-50 flex h-[3.5rem] w-[3.5rem] items-center justify-center rounded-full bg-white text-white shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F553C] focus-visible:ring-offset-2 md:bottom-6 md:right-6"
         target="_blank"
         rel="noreferrer noopener"
       >
