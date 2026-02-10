@@ -11,6 +11,14 @@ const mobileSlides = [
   {
     mobileSrc: "/images/comentarios-yani-mobile.png",
     alt: "Comentario de Yani Isola"
+  },
+  {
+    mobileSrc: "/images/comentarios-marga-mobile.png",
+    alt: "Comentario de Marga"
+  },
+  {
+    mobileSrc: "/images/comentarios-pinomar-mobile.png",
+    alt: "Comentario de Pinomar"
   }
 ];
 
@@ -22,6 +30,14 @@ const desktopSlides = [
   {
     desktopSrc: "/images/comentarios-agus-desktop.png",
     alt: "Comentario de Agus"
+  },
+  {
+    desktopSrc: "/images/comentarios-marga-desktop.png",
+    alt: "Comentario de Marga"
+  },
+  {
+    desktopSrc: "/images/comentarios-pinomar-desktop.png",
+    alt: "Comentario de Pinomar"
   }
 ];
 
