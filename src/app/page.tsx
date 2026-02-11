@@ -24,6 +24,10 @@ export default async function HomePage() {
             const bandColor = "#A8ADA7";
             const isColoredBand = index % 2 === 0;
 
+            const isNetworksService =
+              service === "Planificacion y Administracion de redes" ||
+              service === "Planificación y Administración de redes";
+
             return (
               <div
                 key={service}
@@ -34,7 +38,15 @@ export default async function HomePage() {
                   className="services-item text-2xl md:text-[2rem]"
                   style={{ color: isColoredBand ? "#FFFFFF" : bandColor }}
                 >
-                  {service}
+                  {isNetworksService ? (
+                    <>
+                      Planificación y{" "}
+                      <br className="block md:hidden" />
+                      Administración de redes
+                    </>
+                  ) : (
+                    service
+                  )}
                 </p>
               </div>
             );
