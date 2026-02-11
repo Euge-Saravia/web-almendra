@@ -20,7 +20,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
   title: "Almendra | Agencia de Marketing",
-  description: "Landing page de Almendra, agencia de marketing y comunicación.",
+  description: "Estudio de marketing y comunicación. En Almendra ayudamos a marcas a crecer con estrategia, identidad y contenido pensado para conectar.",
   icons: {
     icon: "/images/logo-redondo.png"
   }
