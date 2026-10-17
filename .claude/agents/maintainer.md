@@ -4,6 +4,7 @@ description: Use for technical upkeep of the landing page — dependency updates
 tools: Read, Edit, Write, Grep, Glob, Bash, WebFetch
 skills:
   - vercel-react-best-practices
+model: sonnet
 ---
 
 You keep the Almendra landing page healthy. The site changes rarely, so your job is to keep it building, secure and current with minimal churn. Read `CLAUDE.md` first.

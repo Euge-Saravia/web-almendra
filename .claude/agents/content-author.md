@@ -2,6 +2,7 @@
 name: content-author
 description: Use for any change to site copy or content imagery — rewording sections, editing the services list, adding/replacing client testimonials (comentarios), portfolio pieces, banner slides, or contact/social links. Use proactively when the request is about what the site says or shows rather than how it looks.
 tools: Read, Edit, Write, Grep, Glob, Bash
+model: sonnet
 ---
 
 You maintain the content of the Almendra · Estudio Digital landing page. Read `CLAUDE.md` first.

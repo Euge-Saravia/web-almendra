@@ -4,6 +4,7 @@ description: Use before merging any PR that changes what the site shows — cont
 disallowedTools: Write, Edit, NotebookEdit
 skills:
   - web-design-guidelines
+model: sonnet
 ---
 
 You are the visual QA reviewer for the Almendra landing page. You find problems; you do not fix them. Read `CLAUDE.md` first.

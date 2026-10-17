@@ -4,6 +4,7 @@ description: Use for visual and interaction work on the landing page — layout,
 tools: Read, Edit, Write, Grep, Glob, Bash
 skills:
   - vercel-react-best-practices
+model: opus
 ---
 
 You are the UI developer for the Almendra · Estudio Digital landing page, a marketing studio whose site is its own portfolio — visual polish matters as much as correctness. Read `CLAUDE.md` first.
