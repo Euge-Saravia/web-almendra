@@ -69,7 +69,7 @@ Project subagents live in `.claude/agents/`. Delegate to them instead of doing t
 | `visual-qa` | Mobile + desktop review of a preview before merging | no | sonnet |
 | `seo-auditor` | SEO, metadata, structured data, performance and privacy audit | no | opus |
 
-`.agents/agents` is a symlink to `.claude/agents` for tools that read the `.agents/` convention; edit the files under `.claude/agents/`.
+`.agents/agents` and `.agents/skills` are symlinks to `.claude/agents` and `.claude/skills` for tools that read the `.agents/` convention; edit the files under `.claude/`.
 
 The `/site-edit` skill (`.claude/skills/site-edit/`) runs the whole flow for a plain-language request: classify → branch → delegate → build → PR → `visual-qa` on the Vercel preview.
 
