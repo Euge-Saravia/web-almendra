@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Playfair_Display, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { getBaseUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const serif = Playfair_Display({
@@ -18,9 +19,38 @@ const sans = Inter({
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
+const title = "Almendra | Agencia de Marketing";
+const description =
+  "Estudio de marketing y comunicación. En Almendra ayudamos a marcas a crecer con estrategia, identidad y contenido pensado para conectar.";
+const ogImage = {
+  url: "/images/banner-slide-1.jpeg",
+  width: 1920,
+  height: 918,
+  alt: "Almendra Estudio Digital"
+};
+
 export const metadata: Metadata = {
-  title: "Almendra | Agencia de Marketing",
-  description: "Estudio de marketing y comunicación. En Almendra ayudamos a marcas a crecer con estrategia, identidad y contenido pensado para conectar.",
+  metadataBase: new URL(getBaseUrl()),
+  title,
+  description,
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: "/",
+    siteName: "Almendra Estudio Digital",
+    title,
+    description,
+    images: [ogImage]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [ogImage.url]
+  },
   icons: {
     icon: "/images/logo-redondo.png"
   }

@@ -5,38 +5,38 @@ import { useState } from "react";
 
 const mobileSlides = [
   {
-    mobileSrc: "/images/comentarios-agus-mobile.png",
+    mobileSrc: "/images/comentarios-agus-mobile.webp",
     alt: "Comentario de Agus"
   },
   {
-    mobileSrc: "/images/comentarios-yani-mobile.png",
+    mobileSrc: "/images/comentarios-yani-mobile.webp",
     alt: "Comentario de Yani Isola"
   },
   {
-    mobileSrc: "/images/comentarios-marga-mobile.png",
+    mobileSrc: "/images/comentarios-marga-mobile.webp",
     alt: "Comentario de Marga"
   },
   {
-    mobileSrc: "/images/comentarios-pinomar-mobile.png",
+    mobileSrc: "/images/comentarios-pinomar-mobile.webp",
     alt: "Comentario de Pinomar"
   }
 ];
 
 const desktopSlides = [
   {
-    desktopSrc: "/images/comentarios-yaniIsola-desktop.png",
+    desktopSrc: "/images/comentarios-yaniIsola-desktop.webp",
     alt: "Comentario de Yani Isola"
   },
   {
-    desktopSrc: "/images/comentarios-agus-desktop.png",
+    desktopSrc: "/images/comentarios-agus-desktop.webp",
     alt: "Comentario de Agus"
   },
   {
-    desktopSrc: "/images/comentarios-marga-desktop.png",
+    desktopSrc: "/images/comentarios-marga-desktop.webp",
     alt: "Comentario de Marga"
   },
   {
-    desktopSrc: "/images/comentarios-pinomar-desktop.png",
+    desktopSrc: "/images/comentarios-pinomar-desktop.webp",
     alt: "Comentario de Pinomar"
   }
 ];

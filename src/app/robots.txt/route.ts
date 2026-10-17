@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
+import { getBaseUrl } from "@/lib/site-url";
 
 const ROBOTS_TXT = `User-agent: *
 Allow: /
+
+Sitemap: ${getBaseUrl()}/sitemap.xml
 `;
 
 export function GET() {
