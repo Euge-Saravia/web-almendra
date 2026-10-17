@@ -56,6 +56,19 @@ Never push directly to `main`. Don't commit `.env.local` or real keys. Use Verce
 
 History note: earlier work went `feature/*` → `dev` → `main` (PRs #6–#20). Vercel PR previews already provide the staging step that `dev` was for, so `dev` has been deleted and all branches target `main`.
 
-## Agent skills
+## Agents and skills
 
-`.cursor/skills/` contains two Vercel-authored skills worth consulting: `vercel-react-best-practices` (React/Next.js performance rules, indexed in its `AGENTS.md`) and `web-design-guidelines` (UI/accessibility review against Vercel's Web Interface Guidelines).
+Project subagents live in `.claude/agents/`. Delegate to them instead of doing the work inline:
+
+| Agent | Use for | Edits code |
+|---|---|---|
+| `content-author` | Copy, services, testimonials, portfolio, banner and link changes (markdown + carousel arrays + hardcoded strings) | yes |
+| `ui-dev` | Layout, responsive behavior, typography, colors, effects, new sections | yes |
+| `maintainer` | Dependencies, Next.js upgrades, build/config, non-visual code | yes |
+| `conversion-analyst` | WhatsApp/Instagram/form conversion tracking and lead analysis | yes |
+| `visual-qa` | Mobile + desktop review of a preview before merging | no |
+| `seo-auditor` | SEO, metadata, structured data, performance and privacy audit | no |
+
+The `/site-edit` skill (`.claude/skills/site-edit/`) runs the whole flow for a plain-language request: classify → branch → delegate → build → PR → `visual-qa` on the Vercel preview.
+
+`.claude/skills/` also symlinks the two Vercel-authored skills in `.cursor/skills/`: `vercel-react-best-practices` (React/Next.js performance rules, indexed in its `AGENTS.md`) and `web-design-guidelines` (UI/accessibility review against Vercel's Web Interface Guidelines).
