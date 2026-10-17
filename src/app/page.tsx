@@ -121,7 +121,7 @@ export default async function HomePage() {
       </section>
       <section className="w-full">
         <Image
-          src="/images/banner-redesSociales-mobile.png"
+          src="/images/banner-redesSociales-mobile.webp"
           alt="Redes sociales"
           width={1600}
           height={900}
@@ -166,7 +166,7 @@ export default async function HomePage() {
           </div>
           <div className="relative hidden w-full md:block md:w-1/2">
             <Image
-              src="/images/banner-redesSociales-desktop.png"
+              src="/images/banner-redesSociales-desktop.webp"
               alt="Redes sociales"
               width={900}
               height={1100}
@@ -212,7 +212,7 @@ export default async function HomePage() {
         <div className="mt-10 hidden md:grid md:w-[calc(100%+3rem)] md:-ml-12 md:grid-cols-4">
           <div className="group relative">
             <Image
-              src="/images/portfolio-redesSociales-desktop.png"
+              src="/images/portfolio-redesSociales-desktop.webp"
               alt="Portfolio redes sociales"
               width={900}
               height={900}
@@ -227,7 +227,7 @@ export default async function HomePage() {
           </div>
           <div className="group relative">
             <Image
-              src="/images/portfolio-identidadVisual-desktop.png"
+              src="/images/portfolio-identidadVisual-desktop.webp"
               alt="Portfolio identidad visual"
               width={900}
               height={900}
@@ -242,7 +242,7 @@ export default async function HomePage() {
           </div>
           <div className="group relative">
             <Image
-              src="/images/portfolio-reBranding-desktop.png"
+              src="/images/portfolio-reBranding-desktop.webp"
               alt="Portfolio rebranding"
               width={900}
               height={900}
@@ -257,7 +257,7 @@ export default async function HomePage() {
           </div>
           <div className="group relative">
             <Image
-              src="/images/portfolio-tiendaNube-desktop.png"
+              src="/images/portfolio-tiendaNube-desktop.webp"
               alt="Portfolio tienda nube"
               width={900}
               height={900}

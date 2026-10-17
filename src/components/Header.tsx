@@ -40,7 +40,7 @@ export default function Header() {
     <header className="sticky top-0 z-30 flex items-center justify-between px-6 py-5">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/banner-background-nav.png"
+          src="/images/banner-background-nav.webp"
           alt=""
           fill
           priority

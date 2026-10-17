@@ -51,7 +51,7 @@ export default function ContactForm({
         setStatus("idle");
         setMessage("");
       }, 2500);
-    } catch (error) {
+    } catch {
       setStatus("error");
       setMessage("No pudimos enviar tu mensaje. Probá de nuevo.");
     }

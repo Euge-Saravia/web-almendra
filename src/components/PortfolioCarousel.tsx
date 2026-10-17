@@ -5,22 +5,22 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    src: "/images/portfolio-redesSociales-mobile.png",
+    src: "/images/portfolio-redesSociales-mobile.webp",
     alt: "Portfolio redes sociales",
     label: "Redes Sociales"
   },
   {
-    src: "/images/portfolio-identidadVisual-mobile.png",
+    src: "/images/portfolio-identidadVisual-mobile.webp",
     alt: "Portfolio identidad visual",
     label: "Identidad Visual"
   },
   {
-    src: "/images/portfolio-reBranding-mobile.png",
+    src: "/images/portfolio-reBranding-mobile.webp",
     alt: "Portfolio re branding",
     label: "Re Branding"
   },
   {
-    src: "/images/portfolio-tiendaNube-Mobile.png",
+    src: "/images/portfolio-tiendaNube-Mobile.webp",
     alt: "Portfolio tienda nube",
     label: "Tienda Nube"
   }

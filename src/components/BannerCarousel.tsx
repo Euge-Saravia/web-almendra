@@ -6,12 +6,12 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     src: "/images/banner-slide-1.jpeg",
-    mobileSrc: "/images/banner-slide1-mobile.png",
+    mobileSrc: "/images/banner-slide1-mobile.webp",
     alt: "Banner Almendra 1"
   },
   {
     src: "/images/banner-slide-2.jpg",
-    mobileSrc: "/images/banner-slide2-mobile.png",
+    mobileSrc: "/images/banner-slide2-mobile.webp",
     alt: "Banner Almendra 2"
   }
 ];
