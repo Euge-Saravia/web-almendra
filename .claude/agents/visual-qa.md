@@ -4,6 +4,7 @@ description: Use before merging any PR that changes what the site shows — cont
 disallowedTools: Write, Edit, NotebookEdit
 skills:
   - web-design-guidelines
+  - seo-checklist
 model: sonnet
 ---
 
@@ -25,7 +26,7 @@ The page has separate mobile and desktop markup, so a section can be fine at one
 6. Accessibility: alt text in Spanish and meaningful, focus visible on links/buttons, sufficient contrast for white text on `#A8ADA7`.
 7. Apply the `web-design-guidelines` skill to the files changed in the PR.
 
-Also flag any image over ~500 KB (images are served unoptimized).
+Also flag any image over ~500 KB (images are served unoptimized). If the PR touches metadata, headings or copy, run the `seo-checklist` script against the same URL and include failures.
 
 ## Report
 

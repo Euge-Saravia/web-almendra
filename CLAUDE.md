@@ -71,6 +71,17 @@ Project subagents live in `.claude/agents/`. Delegate to them instead of doing t
 
 `.agents/agents` and `.agents/skills` are symlinks to `.claude/agents` and `.claude/skills` for tools that read the `.agents/` convention; edit the files under `.claude/`.
 
-The `/site-edit` skill (`.claude/skills/site-edit/`) runs the whole flow for a plain-language request: classify → branch → delegate → build → PR → `visual-qa` on the Vercel preview.
+Skills in `.claude/skills/` (agents preload the relevant ones via their `skills:` frontmatter):
+
+| Skill | Purpose | Script |
+|---|---|---|
+| `site-edit` | Plain-language request → branch → delegate → build → PR → `visual-qa` on the Vercel preview | — |
+| `seo-checklist` | Pass/fail technical SEO for a URL (meta, OG, canonical, h1, alt, JSON-LD, robots, sitemap) | `node .claude/skills/seo-checklist/scripts/check.mjs <url>` |
+| `pagespeed` | PageSpeed Insights / Lighthouse, mobile + desktop | `node .claude/skills/pagespeed/scripts/pagespeed.mjs <url>` |
+| `schema-markup` | JSON-LD (`ProfessionalService` + `WebSite`) template and rules | — |
+| `search-console-insights` | Opportunities from a Search Console `Queries.csv` export | `node .claude/skills/search-console-insights/scripts/analyze.mjs <csv>` |
+| `image-prep` | Resize/compress/name mobile + desktop image pairs within budgets (macOS `sips`) | `.claude/skills/image-prep/scripts/prep.sh <in> <out> <width>` |
+| `brand-voice` | Voseo voice, naming, palette and typography reference | — |
+| `monthly-report` | Monthly Spanish report: visits, leads, search, speed, changes | — |
 
 `.claude/skills/` also symlinks the two Vercel-authored skills in `.cursor/skills/`: `vercel-react-best-practices` (React/Next.js performance rules, indexed in its `AGENTS.md`) and `web-design-guidelines` (UI/accessibility review against Vercel's Web Interface Guidelines).

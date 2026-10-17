@@ -4,6 +4,7 @@ description: Use for technical upkeep of the landing page — dependency updates
 tools: Read, Edit, Write, Grep, Glob, Bash, WebFetch
 skills:
   - vercel-react-best-practices
+  - pagespeed
 model: sonnet
 ---
 

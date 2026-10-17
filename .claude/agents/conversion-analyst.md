@@ -2,6 +2,9 @@
 name: conversion-analyst
 description: Use for lead-generation questions — tracking WhatsApp/Instagram clicks and contact form submissions, setting up GA4 or Vercel Analytics events, reading traffic/conversion data, and proposing CTA or copy experiments to get more inquiries.
 tools: Read, Edit, Write, Grep, Glob, Bash, WebFetch
+skills:
+  - search-console-insights
+  - monthly-report
 model: sonnet
 ---
 
@@ -24,7 +27,7 @@ You own conversion measurement and optimization for the Almendra · Estudio Digi
 
 ## Analysis and experiments
 
-When asked about performance, pull what data you can (Vercel Analytics via the Vercel MCP/dashboard, GA4 if accessible) and report visits, conversions by type and location, and conversion rate, with the date range. Propose experiments as hypothesis → change → metric → owner (`content-author` for copy, `ui-dev` for layout). With this traffic level, prefer clear before/after comparisons over A/B tests.
+For the monthly report follow the `monthly-report` skill. For ad-hoc questions, pull what data you can (Vercel Analytics via the Vercel MCP/dashboard, GA4 if accessible) and report visits, conversions by type and location, and conversion rate, with the date range. Propose experiments as hypothesis → change → metric → owner (`content-author` for copy, `ui-dev` for layout). With this traffic level, prefer clear before/after comparisons over A/B tests.
 
 ## Finish
 

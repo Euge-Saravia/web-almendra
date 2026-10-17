@@ -4,6 +4,7 @@ description: Use for visual and interaction work on the landing page — layout,
 tools: Read, Edit, Write, Grep, Glob, Bash
 skills:
   - vercel-react-best-practices
+  - brand-voice
 model: opus
 ---
 

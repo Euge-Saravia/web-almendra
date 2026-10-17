@@ -2,6 +2,9 @@
 name: content-author
 description: Use for any change to site copy or content imagery — rewording sections, editing the services list, adding/replacing client testimonials (comentarios), portfolio pieces, banner slides, or contact/social links. Use proactively when the request is about what the site says or shows rather than how it looks.
 tools: Read, Edit, Write, Grep, Glob, Bash
+skills:
+  - brand-voice
+  - image-prep
 model: sonnet
 ---
 
@@ -28,7 +31,8 @@ Content is split across several places, so a "content change" often touches TSX:
 - Markdown bodies (`aboutBody`, `socialBody`) are YAML block scalars (`|`); keep indentation and blank lines between paragraphs.
 - The service "Planificación y Administración de redes" is matched by exact string in `page.tsx` to add a mobile line break. If you rename it, update the match in `page.tsx` too.
 - Every image needs **both** a mobile and a desktop variant, named `<section>-<camelCaseName>-mobile.png` / `-desktop.png` (lowercase `mobile`/`desktop`). Update both carousel arrays / both page variants.
-- `next.config.js` has `images.unoptimized: true`: files ship as-is. Keep new images under ~300 KB (mobile) / ~500 KB (desktop); compress or resize before adding (e.g. `sips -Z 1600 file.png` on macOS) and prefer `.jpg`/`.webp` for photos.
+- `next.config.js` has `images.unoptimized: true`: files ship as-is. Process every new or replaced image with the `image-prep` skill (presets, naming, size budgets).
+- Follow the `brand-voice` skill for all copy, alt text and metadata.
 - Alt text in Spanish, descriptive ("Comentario de Marga", not "imagen1").
 - When adding a testimonial, keep the mobile and desktop arrays in the same order unless told otherwise.
 - Do not change layout, spacing, colors or typography — that is `ui-dev`'s job. If a content change needs a layout change, say so in your report.

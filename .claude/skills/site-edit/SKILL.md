@@ -32,7 +32,7 @@ Delegate to the chosen agent(s) with a self-contained brief: the request, exact 
 
 ## 4. Verify
 
-`npm run build` must pass. Push the branch, open a PR into `main`, wait for the Vercel preview URL, then run `visual-qa` against it. If it reports `needs fixes`, send the findings back to the responsible agent and re-run `visual-qa`.
+`npm run build` must pass. Push the branch, open a PR into `main`, wait for the Vercel preview URL, then run `visual-qa` against it (it also runs `seo-checklist` when metadata or copy changed). If it reports `needs fixes`, send the findings back to the responsible agent and re-run `visual-qa`.
 
 ## 5. Hand back
 
